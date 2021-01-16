@@ -1,5 +1,5 @@
 import * as React from "react"
-import {useStaticQuery,graphql} from "gatsby"
+import {useStaticQuery,graphql,Link} from "gatsby"
 import Img from "gatsby-image"
 import blogStyles from './blog.module.scss'
 import PageLayout from "../components/page/PageLayout"
@@ -34,9 +34,11 @@ const data = useStaticQuery(graphql`
     <PageLayout>
         <div className={blogStyles.container}>
             {
-            data.allContentfulArticle.edges.map(edge=>(<div key={edge.node.id}>
+            data.allContentfulArticle.edges.map(edge=>(<div   key={edge.node.id}>
+                <Link to={`/blog/${edge.node.slug}`}>
                 <Img fluid={edge.node.image.fluid} alt={edge.node.title} style={{height:200,width:"100%"}}/>
                 <h1>{edge.node.title}</h1>
+                </Link>
                 <p>{edge.node.createdAt}</p>
             </div>))
             }
