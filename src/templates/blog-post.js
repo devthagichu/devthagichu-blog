@@ -16,6 +16,10 @@ query($slug:String!) {
         sizes
       }
     }
+    category {
+      title
+      id
+    }
   }
 }
 `
@@ -30,8 +34,12 @@ const BlogPost = ({data}) => {
              
                 <Img fluid={data.contentfulArticle.image.fluid} alt={data.contentfulArticle.title} style={{height:400,width:"100%"}}/>
                 <h1>{data.contentfulArticle.title}</h1>
-               
-                <p>{data.contentfulArticle.createdAt}</p>
+                               <p>{data.contentfulArticle.createdAt}</p>
+                               {data.contentfulArticle.category.map(
+                                   item =>(
+                                       <h4 key={item.id}>{item.title}</h4>
+                                   )
+                               )}
          </div>
       </PageLayout>
   )
