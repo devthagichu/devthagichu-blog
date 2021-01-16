@@ -5,7 +5,7 @@ const IndexPage = () => {
   return (
  
     <PageLayout>
-Hello Home
+Hello Blog
     </PageLayout>
  
   )

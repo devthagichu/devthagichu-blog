@@ -1,3 +1,9 @@
+require('dotenv').config();
+
+
+
+
+
 module.exports = {
   siteMetadata: {
     title: "devthagichu-blog",
@@ -6,15 +12,15 @@ module.exports = {
     {
       resolve: "gatsby-source-contentful",
       options: {
-        accessToken: "",
-        spaceId: "",
+        accessToken: process.env.CONTENTFUL_ACCESSTOKEN,
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
       },
     },
     "gatsby-plugin-sass",
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
-        trackingId: "",
+        trackingId: process.env.GOOGLE_TRACKING_CODE,
       },
     },
     "gatsby-plugin-sharp",
