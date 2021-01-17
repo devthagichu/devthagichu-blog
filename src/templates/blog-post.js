@@ -1,7 +1,7 @@
 import * as React from "react"
 import {graphql,Link} from "gatsby"
 import Img from "gatsby-image"
-
+import blogpostStyles from "./blogpost.module.scss"
 import PageLayout from "../components/page/PageLayout"
 import Head from "../components/head/Head"
 
@@ -10,7 +10,7 @@ export const query = graphql`
 query($slug:String!) {
   contentfulArticle(slug: {eq: $slug}) {
     title
-    createdAt
+    createdAt(formatString: "Do MMMM YYYY")
     image {
       fluid {
         src
@@ -33,18 +33,26 @@ const BlogPost = ({data}) => {
       <PageLayout>
         <Head title={data.contentfulArticle.title} />
          <div>
-             <Link to="/blog">Back to Blog</Link>
-             <br />
+          
              <br />
              
-                <Img fluid={data.contentfulArticle.image.fluid} alt={data.contentfulArticle.title} style={{height:400,width:"100%"}}/>
-                <h1>{data.contentfulArticle.title}</h1>
-                               <p>{data.contentfulArticle.createdAt}</p>
+                <Img fluid={data.contentfulArticle.image.fluid} alt={data.contentfulArticle.title}
+                className={blogpostStyles.image}
+                />
+                <h1 className={blogpostStyles.title}>{data.contentfulArticle.title}</h1>
+                               <p className={blogpostStyles.createdAt}>{data.contentfulArticle.createdAt}</p>
+                               <div>
+
                                {data.contentfulArticle.category.map(
-                                   item =>(
-                                       <h4 key={item.id}>{item.title}</h4>
+                                 item =>(
+                                   <div key={item.id} className={blogpostStyles.category}>
+                                    <span className={blogpostStyles.category__title}>
+                                      {item.title}
+                                    </span>
+                                    </div>
                                    )
-                               )}
+                                   )}
+                                   </div>
 
                               
          </div>

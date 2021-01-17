@@ -2,6 +2,10 @@
     display: flex;
     justify-content: space-between;
 }
+.logo{
+    color: #000000;
+    font-weight:bolder;
+}
 
 .nav__container{
     display: flex;
@@ -13,4 +17,6 @@
 }
 .nav__link{
     text-decoration: none;
+    color: black;
+    font-weight: bold;
 }

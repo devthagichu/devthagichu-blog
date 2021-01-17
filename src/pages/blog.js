@@ -13,6 +13,10 @@ const data = useStaticQuery(graphql`
     edges {
       node {
         title
+        category {
+          title
+          id
+        }
         createdAt(formatString: "Do MMMM YYYY")
         slug
         id
@@ -39,6 +43,15 @@ const data = useStaticQuery(graphql`
             data.allContentfulArticle.edges.map(edge=>(<div   key={edge.node.id} className={blogStyles.card__content}>
                 <Link to={`/blog/${edge.node.slug}`}>
                   <div className={blogStyles.card__image__container}>
+                    {
+                      edge.node.category.map(item =>(
+                        <div key={item.id} className={blogStyles.card__category}>
+                          <span className={blogStyles.card__category__title}>
+                            {item.title}
+                          </span>
+                          </div>
+                      ))
+                    }
                 <Img fluid={edge.node.image.fluid} alt={edge.node.title} className={blogStyles.card__image}/>
                 </div>
                 <h3 className={blogStyles.card__title}>{edge.node.title}</h3>

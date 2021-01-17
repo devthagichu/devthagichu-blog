@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <div className={headerStyles.header__container}>
       <Link to="/"> 
-        <h1>Dev Thagichu</h1>
+        <h3 className={headerStyles.logo}>DevThagichu</h3>
       </Link>
 <nav>
   <ul className={headerStyles.nav__container}>
