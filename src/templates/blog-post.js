@@ -1,5 +1,5 @@
 import * as React from "react"
-import {graphql,Link} from "gatsby"
+import {graphql} from "gatsby"
 import Img from "gatsby-image"
 import blogpostStyles from "./blogpost.module.scss"
 import PageLayout from "../components/page/PageLayout"
