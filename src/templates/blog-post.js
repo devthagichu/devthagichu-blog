@@ -1,7 +1,9 @@
 import * as React from "react"
 import {graphql,Link} from "gatsby"
 import Img from "gatsby-image"
+
 import PageLayout from "../components/page/PageLayout"
+import Head from "../components/head/Head"
 
 
 export const query = graphql`
@@ -25,8 +27,11 @@ query($slug:String!) {
 `
 
 const BlogPost = ({data}) => {
+
+ 
   return (
       <PageLayout>
+        <Head title={data.contentfulArticle.title} />
          <div>
              <Link to="/blog">Back to Blog</Link>
              <br />
@@ -40,6 +45,8 @@ const BlogPost = ({data}) => {
                                        <h4 key={item.id}>{item.title}</h4>
                                    )
                                )}
+
+                              
          </div>
       </PageLayout>
   )

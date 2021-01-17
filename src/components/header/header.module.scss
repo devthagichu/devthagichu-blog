@@ -1,0 +1,16 @@
+.header__container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav__container{
+    display: flex;
+    justify-content: space-between;
+}
+.nav__item{
+    list-style: none;
+    margin-left: 0.4rem;
+}
+.nav__link{
+    text-decoration: none;
+}

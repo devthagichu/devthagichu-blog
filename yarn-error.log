@@ -1,0 +1,73 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add global libpng-dev
+
+PATH: 
+  C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Users\buddy\AppData\Local\Microsoft\WindowsApps;C:\Users\buddy\AppData\Local\atom\bin;C:\Users\buddy\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\buddy\AppData\Roaming\npm;C:\Users\buddy\AppData\Local\Yarn\bin
+
+Yarn version: 
+  1.22.5
+
+Node version: 
+  14.15.4
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/libpng-dev: Not found
+      at Request.params.callback [as _callback] (C:\Program Files (x86)\Yarn\lib\cli.js:66097:18)
+      at Request.self.callback (C:\Program Files (x86)\Yarn\lib\cli.js:140749:22)
+      at Request.emit (events.js:315:20)
+      at Request.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141721:10)
+      at Request.emit (events.js:315:20)
+      at IncomingMessage.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141643:12)
+      at Object.onceWrapper (events.js:421:28)
+      at IncomingMessage.emit (events.js:327:22)
+      at endReadableNT (internal/streams/readable.js:1327:12)
+      at processTicksAndRejections (internal/process/task_queues.js:80:21)
+
+npm manifest: 
+  {
+    "name": "devthagichu-blog",
+    "version": "1.0.0",
+    "private": true,
+    "description": "devthagichu-blog",
+    "keywords": [
+      "gatsby"
+    ],
+    "scripts": {
+      "develop": "gatsby develop",
+      "start": "gatsby develop",
+      "build": "gatsby build",
+      "serve": "gatsby serve",
+      "clean": "gatsby clean"
+    },
+    "dependencies": {
+      "@mdx-js/mdx": "^1.6.22",
+      "@mdx-js/react": "^1.6.22",
+      "gatsby": "^2.26.1",
+      "gatsby-image": "^2.9.0",
+      "gatsby-plugin-google-analytics": "^2.9.0",
+      "gatsby-plugin-manifest": "^2.10.0",
+      "gatsby-plugin-mdx": "^1.8.0",
+      "gatsby-plugin-offline": "^3.8.0",
+      "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
+      "gatsby-plugin-react-helmet": "^3.8.0",
+      "gatsby-plugin-sass": "^3.0.0",
+      "gatsby-plugin-sharp": "^2.12.2",
+      "gatsby-plugin-sitemap": "^2.10.0",
+      "gatsby-source-contentful": "^4.4.1",
+      "gatsby-source-filesystem": "^2.9.1",
+      "gatsby-transformer-sharp": "^2.10.1",
+      "react": "^16.13.1",
+      "react-dom": "^16.13.1",
+      "react-helmet": "^6.1.0",
+      "sass": "^1.32.4"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

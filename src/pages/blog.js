@@ -3,6 +3,7 @@ import {useStaticQuery,graphql,Link} from "gatsby"
 import Img from "gatsby-image"
 import blogStyles from './blog.module.scss'
 import PageLayout from "../components/page/PageLayout"
+import Head from "../components/head/Head"
 
 const IndexPage = () => {
 
@@ -32,14 +33,18 @@ const data = useStaticQuery(graphql`
   return (
  
     <PageLayout>
-        <div className={blogStyles.container}>
+      <Head title="Blog" />
+        <div className={blogStyles.card__container}>
             {
-            data.allContentfulArticle.edges.map(edge=>(<div   key={edge.node.id}>
+            data.allContentfulArticle.edges.map(edge=>(<div   key={edge.node.id} className={blogStyles.card__content}>
                 <Link to={`/blog/${edge.node.slug}`}>
-                <Img fluid={edge.node.image.fluid} alt={edge.node.title} style={{height:200,width:"100%"}}/>
-                <h1>{edge.node.title}</h1>
+                  <div className={blogStyles.card__image__container}>
+                <Img fluid={edge.node.image.fluid} alt={edge.node.title} className={blogStyles.card__image}/>
+                </div>
+                <h3 className={blogStyles.card__title}>{edge.node.title}</h3>
                 </Link>
-                <p>{edge.node.createdAt}</p>
+                <p className={blogStyles.card__date}>{edge.node.createdAt}</p>
+                <p className={blogStyles.card__body}>Donec sollicitudin molestie malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit.  </p>
             </div>))
             }
         </div>
