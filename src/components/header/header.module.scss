@@ -1,3 +1,5 @@
+$cubic: cubic-bezier(0.4, 0.01, 0.165, 0.99); 
+
 .header__container{
     display: flex;
     justify-content: space-between;
@@ -6,6 +8,7 @@
 .logo{
     color: #000000;
     font-weight:bolder;
+    font-size: 1.3rem;
 }
 
 .nav__container{
@@ -20,4 +23,8 @@
     text-decoration: none;
     color: black;
     font-weight: bold;
+}
+.menu__container{
+    margin-left: 1.2rem;
+    cursor: pointer;
 }

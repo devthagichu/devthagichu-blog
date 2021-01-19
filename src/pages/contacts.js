@@ -8,7 +8,7 @@ const Contact = () => {
     <PageLayout>
       <Head title="Home" />
       <div>
-        home
+        <h2>Drop by and say Hey??</h2>
       </div>
     </PageLayout>
  

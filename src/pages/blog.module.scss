@@ -43,19 +43,23 @@ font-weight: bolder;
 }
 .card__title{
   color:black;
-  margin-top: 1.2rem;
+  margin-top: 2.4rem;
+  font-size: 1.5rem;
 }
  
 .card__date{
   margin-top: 1.2rem;
   
   font-size: 0.9rem;
-  color: #c2c2c2;
+  // color: #c2c2c2;
+  color:black;
   font-weight: bolder;
 } 
 .card__body{
   margin-top:0.6rem;
   margin-bottom:0.6rem;
   font-size: 0.9rem;
-  color: #494949;
+  // font-size: 21px;
+  line-height: 1.4rem;
+  
 } 

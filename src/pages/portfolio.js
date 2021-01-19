@@ -8,7 +8,7 @@ const Portfolio = () => {
     <PageLayout>
       <Head title="Home" />
       <div>
-        home
+        <h2>My Projects</h2>
       </div>
     </PageLayout>
  
