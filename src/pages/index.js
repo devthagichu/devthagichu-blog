@@ -1,14 +1,17 @@
-import * as React from "react"
-import PageLayout from "../components/page/PageLayout"
-import Head from "../components/head/Head"
-import indexStyles from "./index.module.scss"
+import * as React from "react";
+import PageLayout from "../components/page/PageLayout";
+import Head from "../components/head/Head";
+import indexStyles from "./index.module.scss";
+import HeroBlog from "../components/heroblog";
 
 const IndexPage = () => {
   return (
-
     <PageLayout>
       <Head title="Home" />
-      <div>
+
+      <HeroBlog />
+
+      {/* <div>
         <div className={indexStyles.hero__container}>
           <div className={indexStyles.hero__top}>
             <h1>"There are three responses to a piece of design -- Yes, No and Wow. Wow is the one to I aim for."</h1>
@@ -18,10 +21,9 @@ const IndexPage = () => {
 
           </div>
         </div>
-      </div>
+      </div> */}
     </PageLayout>
+  );
+};
 
-  )
-}
-
-export default IndexPage
+export default IndexPage;

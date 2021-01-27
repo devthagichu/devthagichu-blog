@@ -1,13 +1,12 @@
-.container{
-    margin: 0 auto;
-    max-width: 1100px;
-    padding: 1.4rem;
-    display: flex;
-    flex-direction:column;
-    min-height: 100vh;
-    position: relative;
-    
+.container {
+  margin: 0 auto;
+  max-width: 1100px;
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
 }
-.content__container{
-    flex: 1;
+.content__container {
+  flex: 1;
 }
