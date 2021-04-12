@@ -42,7 +42,7 @@ exports.createPages = ({ graphql, actions }) => {
     );
     const numberOfPages = Math.ceil(totalPosts / postsPerPage);
 
-    result.data.allContentfulArticle.edges.forEach((_, idx) => {
+    Array.from({ length: numberOfPages }).forEach((_, idx) => {
       const isFirstPage = idx === 0;
       const currentPage = idx + 1;
 
