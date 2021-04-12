@@ -1,12 +1,12 @@
-import * as React from "react" 
-import pagetitleStyles from "./pagetitle.module.scss"
+import * as React from "react";
+import pagetitleStyles from "./pagetitle.module.scss";
 
-const Pagetitle = ({title}) => {
+const Pagetitle = ({ title }) => {
   return (
     <div className={pagetitleStyles.container}>
-   <h2 className={pagetitleStyles.title}>{title}</h2>
+      <h2 className={pagetitleStyles.title}>{title}</h2>
     </div>
-  )
-}
+  );
+};
 
-export default Pagetitle
+export default Pagetitle;

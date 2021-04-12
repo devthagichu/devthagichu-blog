@@ -1,65 +1,8 @@
 .card__container {
   position: relative;
   max-width: 100%;
-  display: grid;
-grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-template-rows: minmax(300px, auto);
-  grid-auto-flow: dense;
-  grid-gap: 10px; 
-   
-}
-.card__content{
-  overflow: hidden;
-  margin-bottom: 1.2rem;
-}
-.card__image__container{
- height: 300px; 
- position: relative;
- overflow: hidden;
- border-radius: 0.5rem;
-}
-.card__image{
   width: 100%;
-  height: 100%;
-    transition: transform .2s; 
-  &:hover{
-    transform: scale(1.05);
-  }
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
 }
-.card__category{
-background-color: #dddddd;
-position:absolute;
-z-index: 100;
-top:1rem;
-right: 1rem;
-padding: 0.5rem;
-border-radius: 4rem;
-margin-left: 0.4rem;
-}
-.card__category__title{
-color: black;
-font-size: 0.8rem;
-font-weight: bolder;
-}
-.card__title{
-  color:black;
-  margin-top: 2.4rem;
-  font-size: 1.5rem;
-}
- 
-.card__date{
-  margin-top: 1.2rem;
-  
-  font-size: 0.9rem;
-  // color: #c2c2c2;
-  color:black;
-  font-weight: bolder;
-} 
-.card__body{
-  margin-top:0.6rem;
-  margin-bottom:0.6rem;
-  font-size: 0.9rem;
-  // font-size: 21px;
-  line-height: 1.4rem;
-  
-} 

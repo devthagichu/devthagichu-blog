@@ -3,33 +3,23 @@ require("dotenv").config();
 module.exports = {
   siteMetadata: {
     title: "devthagichu-blog",
+    siteUrl: "http://www.devthagichu.com",
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Poppins`,
-            variants: [`400`, `700`],
-          },
-        ],
-      },
-    },
-    {
       resolve: "gatsby-source-contentful",
       options: {
-        accessToken: process.env.CONTENTFUL_ACCESSTOKEN,
-        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.contentfulToken,
+        spaceId: process.env.contentfulSpace,
       },
     },
     "gatsby-plugin-sass",
-    {
-      resolve: "gatsby-plugin-google-analytics",
-      options: {
-        trackingId: process.env.GOOGLE_TRACKING_CODE,
-      },
-    },
+    // {
+    //   resolve: "gatsby-plugin-google-analytics",
+    //   options: {
+    //     trackingId: process.env.GOOGLE_TRACKING_CODE,
+    //   },
+    // },
     "gatsby-plugin-sharp",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",

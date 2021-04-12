@@ -6,6 +6,7 @@ import PageLayout from "../components/page/PageLayout";
 import Head from "../components/head/Head";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
+import BlogPostCard from "../components/cards/BlogPostCard";
 
 export const query = graphql`
   query($slug: String!) {
@@ -18,6 +19,7 @@ export const query = graphql`
           base64
           sizes
         }
+        createdAt
       }
       body {
         raw
@@ -39,6 +41,36 @@ export const query = graphql`
         title
         id
       }
+      relatedPosts {
+        title
+        category {
+          title
+          id
+        }
+        createdAt(formatString: "Do MMMM YYYY")
+        slug
+        id
+        image {
+          fluid {
+            src
+            base64
+            sizes
+          }
+        }
+        author {
+          id
+          name
+          twitter
+          title
+          avator {
+            fluid {
+              src
+              base64
+              sizes
+            }
+          }
+        }
+      }
     }
   }
 `;
@@ -53,22 +85,37 @@ let options = {
 
 const BlogPost = ({ data }) => {
   return (
-    <PageLayout>
-      <Head title={data.contentfulArticle.title} />
-      <div className={blogpostStyles.container}>
-        <br />
-
+    <>
+      <div className={blogpostStyles.header}>
         <Img
           fluid={data.contentfulArticle.image.fluid}
           alt={data.contentfulArticle.title}
-          className={blogpostStyles.image}
+          className={blogpostStyles.header__image}
         />
-        <h1 className={blogpostStyles.title}>{data.contentfulArticle.title}</h1>
-        <p className={blogpostStyles.createdAt}>
-          {data.contentfulArticle.createdAt}
-        </p>
+        <div className={blogpostStyles.header__overlay}></div>
+        <div className={blogpostStyles.header__content}>
+          <h1 className={blogpostStyles.header__title}>
+            {data.contentfulArticle.title}
+          </h1>
+          <p className={blogpostStyles.createdAt}>
+            {data.contentfulArticle.createdAt}
+          </p>
+          {data.contentfulArticle.category.map((item) => (
+            <div key={item.id}>
+              <span className={blogpostStyles.card__category}>
+                {item.title}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
 
-        {/* {data.contentfulArticle.category.map(
+      <PageLayout>
+        <Head title={data.contentfulArticle.title} />
+        <div className={blogpostStyles.container}>
+          <br />
+
+          {/* {data.contentfulArticle.category.map(
             item => (
               <div key={item.id} className={blogpostStyles.category}>
                 <span className={blogpostStyles.category__title}>
@@ -78,38 +125,23 @@ const BlogPost = ({ data }) => {
             )
           )} */}
 
-        <div className={blogpostStyles.body}>
-          {renderRichText(data.contentfulArticle.body, options)}
-        </div>
-
-        <div
-          style={{
-            display: "flex",
-            marginTop: "1.2rem",
-            marginBottom: "1.2rem",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Img
-            fluid={data.contentfulArticle.author.avator.fluid}
-            alt={data.contentfulArticle.author.name}
-            style={{
-              width: 150,
-              height: 150,
-              borderRadius: 75,
-              overflow: "hidden",
-            }}
-          />
-
-          <div style={{ textAlign: "center", marginTop: "1.2rem" }}>
-            <h2>{data.contentfulArticle.author.name}</h2>
-            <p>{data.contentfulArticle.author.title}</p>
+          <div className={blogpostStyles.body}>
+            {renderRichText(data.contentfulArticle.body, options)}
           </div>
         </div>
-      </div>
-    </PageLayout>
+        {data.contentfulArticle.relatedPosts && <h1>Related Posts</h1>}
+        <br />
+        <br />
+        <br />
+
+        <div className={blogpostStyles.card__container}>
+          {data.contentfulArticle.relatedPosts &&
+            data.contentfulArticle.relatedPosts.map((edge) => (
+              <BlogPostCard key={edge.id} post={edge} />
+            ))}
+        </div>
+      </PageLayout>
+    </>
   );
 };
 
