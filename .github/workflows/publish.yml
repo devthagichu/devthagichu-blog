@@ -1,8 +1,9 @@
-name: Deploy on content publish
-on:
-	repository_dispatch:
-    	types: [publish-event]
+name: "Deploy to personal webiste" # Name of your workflow
 
+on:
+  push:
+    branches:
+      - production # The trigger of the this workflow
 
 jobs:
   build:
