@@ -14,12 +14,12 @@ module.exports = {
       },
     },
     "gatsby-plugin-sass",
-    // {
-    //   resolve: "gatsby-plugin-google-analytics",
-    //   options: {
-    //     trackingId: process.env.GOOGLE_TRACKING_CODE,
-    //   },
-    // },
+    {
+      resolve: "gatsby-plugin-google-analytics",
+      options: {
+        trackingId: "process.env.GOOGLE_TRACKING_CODE",
+      },
+    },
     "gatsby-plugin-sharp",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
