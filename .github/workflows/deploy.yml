@@ -20,8 +20,9 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-        env:
-          - contentfulSpace: ${{ secrets.CONTENTFUL_SPACEID }}
-          - contentfulToken: ${{ secrets.CONTENTFUL_ACCESSTOKEN }}
+
       - run: npm install
       - run: npm run build --if-present
+        env:
+          contentfulSpace: ${{ secrets.CONTENTFUL_SPACEID }}
+          contentfulToken: ${{ secrets.CONTENTFUL_ACCESSTOKEN }}
