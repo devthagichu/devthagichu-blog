@@ -3,7 +3,7 @@ name: "Deploy to personal webiste" # Name of your workflow
 on:
   push:
     branches:
-      - production # The trigger of the this workflow
+      - main # The trigger of the this workflow
 
 jobs:
   build:
