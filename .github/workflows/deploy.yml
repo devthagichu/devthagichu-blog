@@ -11,6 +11,5 @@ jobs:
     steps:
       - uses: actions/checkout@v1 # Checkout your triggered branch
       - uses: actions/setup-node@v2
-        run:
-          - yarn
-          - yarn build
+        run: yarn
+        run: yarn build
