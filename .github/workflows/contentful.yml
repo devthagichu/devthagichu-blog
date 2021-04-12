@@ -1,9 +1,8 @@
 name: "Deploy on content publish"
-
 on:
   repository_dispatch:
-    types: [publish-event]
-
+    types:
+      - publish-event
 jobs:
   build:
     runs-on: ubuntu-latest
