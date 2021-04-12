@@ -23,6 +23,19 @@ export const query = graphql`
       }
       body {
         raw
+        references {
+          ... on ContentfulAsset {
+            __typename
+            contentful_id
+            title
+
+            fluid(maxWidth: 1200, maxHeight: 450) {
+              src
+              base64
+              sizes
+            }
+          }
+        }
       }
       author {
         id
@@ -74,16 +87,31 @@ export const query = graphql`
     }
   }
 `;
-let options = {
-  renderNode: {
-    [BLOCKS.EMBEDDED_ASSET]: (node) => {
-      console.log(node);
-      return `<img class='custom-asset' src=""/>`;
-    },
-  },
-};
+
+const Bold = ({ children }) => (
+  <span className={blogpostStyles.bold}>{children}</span>
+);
+const Text = ({ children }) => <p className="align-center">{children}</p>;
 
 const BlogPost = ({ data }) => {
+  const options = {
+    renderMark: {
+      [MARKS.BOLD]: (text) => <Bold>{text}</Bold>,
+    },
+    renderNode: {
+      [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
+      [BLOCKS.EMBEDDED_ASSET]: (node) => {
+        return (
+          <Img
+            fluid={node.data.target.fluid}
+            alt={node.data.target.title}
+            className={blogpostStyles.images}
+          />
+        );
+      },
+    },
+  };
+
   return (
     <>
       <div className={blogpostStyles.header}>
