@@ -5,6 +5,8 @@
   max-width: 100%;
   width: 100%;
   display: grid;
+  padding-left: 2rem;
+  padding-right: 2rem;
 
   grid-gap: 2rem;
 
@@ -31,6 +33,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 .pagination__link {
   &__old {

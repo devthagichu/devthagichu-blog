@@ -1,8 +1,67 @@
+@import "../styles/breakPoints.scss";
+
 .card__container {
   position: relative;
   max-width: 100%;
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  padding-left: 2rem;
+  padding-right: 2rem;
+
   grid-gap: 2rem;
+
+  @include xs {
+    grid-template-columns: 1fr;
+  }
+  @include sm {
+    grid-template-columns: 1fr 1fr;
+  }
+  @include md {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @include lg {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @include xl {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.pagination {
+  margin: 2.6rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.pagination__link {
+  &__old {
+    border-radius: 0.3rem;
+    padding: 0.8rem 1.6rem;
+    border: none;
+    color: #53bd95;
+    border: 1px solid #53bd95;
+    text-transform: uppercase;
+    &:hover {
+      border-color: none;
+      background-color: #53bd95;
+      color: #fff;
+    }
+  }
+  &__new {
+    border-radius: 0.3rem;
+    padding: 0.8rem 1.6rem;
+    border: none;
+    background-color: #53bd95;
+    color: #fff;
+    border: 1px solid;
+    text-transform: uppercase;
+    &:hover {
+      border-color: #53bd95;
+      background-color: #fff;
+      color: #53bd95;
+    }
+  }
 }
