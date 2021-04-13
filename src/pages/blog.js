@@ -50,7 +50,6 @@ const IndexPage = () => {
   return (
     <>
       {/* <Head title="Blog" /> */}
-      <Pagetitle title="Latest Posts" />
       <div className={blogStyles.card__container}>
         {data.allContentfulArticle.edges.map((edge) => (
           <BlogPostCard key={edge.node.id} post={edge.node} />
