@@ -114,32 +114,32 @@ const BlogPost = ({ data }) => {
 
   return (
     <>
-      <div className={blogpostStyles.header}>
-        <Img
-          fluid={data.contentfulArticle.image.fluid}
-          alt={data.contentfulArticle.title}
-          className={blogpostStyles.header__image}
-        />
-        <div className={blogpostStyles.header__overlay}></div>
-        <div className={blogpostStyles.header__content}>
-          <h1 className={blogpostStyles.header__title}>
-            {data.contentfulArticle.title}
-          </h1>
-          <p className={blogpostStyles.createdAt}>
-            {data.contentfulArticle.createdAt}
-          </p>
-          {data.contentfulArticle.category.map((item) => (
-            <div key={item.id}>
-              <span className={blogpostStyles.card__category}>
-                {item.title}
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
-
+      <Head title={data.contentfulArticle.title} />
       <PageLayout>
-        <Head title={data.contentfulArticle.title} />
+        <div className={blogpostStyles.header}>
+          <Img
+            fluid={data.contentfulArticle.image.fluid}
+            alt={data.contentfulArticle.title}
+            className={blogpostStyles.header__image}
+          />
+          <div className={blogpostStyles.header__overlay}></div>
+          <div className={blogpostStyles.header__content}>
+            <h1 className={blogpostStyles.header__title}>
+              {data.contentfulArticle.title}
+            </h1>
+            <p className={blogpostStyles.createdAt}>
+              {data.contentfulArticle.createdAt}
+            </p>
+            {data.contentfulArticle.category.map((item) => (
+              <div key={item.id}>
+                <span className={blogpostStyles.card__category}>
+                  {item.title}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
         <div className={blogpostStyles.container}>
           <br />
 

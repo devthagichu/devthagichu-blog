@@ -1,0 +1,143 @@
+@import "../../styles/breakPoints.scss";
+
+a {
+  color: #000;
+}
+
+/* header */
+
+.header {
+  background-color: #fff;
+  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  max-width: 1100px;
+  z-index: 3;
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.header li a {
+  display: block;
+  padding: 20px 20px;
+  border-right: 1px solid #f4f4f4;
+  text-decoration: none;
+}
+
+.header li a:hover,
+.header .menu__btn:hover {
+  background-color: #f4f4f4;
+}
+
+.header .menu__logo {
+  display: block;
+  color: #53bd95;
+  float: left;
+  font-size: 2em;
+  padding: 10px 20px;
+  font-weight: bold !important;
+  text-decoration: none;
+}
+
+/* menu */
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+
+/* menu icon */
+
+.header .menu__icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu__icon .menu__navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background 0.2s ease-out;
+  width: 18px;
+}
+
+.header .menu__icon .menu__navicon:before,
+.header .menu__icon .menu__navicon:after {
+  background: #333;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+
+.header .menu__icon .menu__navicon:before {
+  top: 5px;
+}
+
+.header .menu__icon .menu__navicon:after {
+  top: -5px;
+}
+
+/* menu btn */
+
+.header .menu__btn {
+  display: none;
+}
+
+.header .menu__btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.header .menu__btn:checked ~ .menu__icon .menu__navicon {
+  background: transparent;
+}
+
+.header .menu__btn:checked ~ .menu__icon .menu__navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu__btn:checked ~ .menu__icon .menu__navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu__btn:checked ~ .menu__icon:not(.steps) .menu__navicon:before,
+.header .menu__btn:checked ~ .menu__icon:not(.steps) .menu__navicon:after {
+  top: 0;
+}
+
+@include gt-sm {
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 20px 30px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu__icon {
+    display: none;
+  }
+}
+.container {
+  margin: 0 auto;
+  max-width: 1100px;
+
+  position: relative;
+}

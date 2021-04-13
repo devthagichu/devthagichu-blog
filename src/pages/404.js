@@ -27,7 +27,7 @@ const NotFoundPage = () => {
             border: "none",
             backgroundColor: "#53bd95",
             color: "#fff",
-            border: "1px solid",
+
             textTransform: "uppercase",
           }}
         >
