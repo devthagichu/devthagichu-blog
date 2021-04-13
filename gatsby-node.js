@@ -36,17 +36,16 @@ exports.createPages = ({ graphql, actions }) => {
     });
 
     // create pages
-    const postsPerPage = 9;
-    const totalPosts = Math.ceil(
-      result.data.allContentfulArticle.edges.length + 1
-    );
+    const postsPerPage = 6;
+    const totalPosts = Math.ceil(result.data.allContentfulArticle.edges.length);
     const numberOfPages = Math.ceil(totalPosts / postsPerPage);
 
     Array.from({ length: numberOfPages }).forEach((_, idx) => {
       const isFirstPage = idx === 0;
       const currentPage = idx + 1;
+      const isLastPage = currentPage === numberOfPages;
 
-      if (isFirstPage) return;
+      // if (isFirstPage) return;
       console.log(`/blog/page/${currentPage}`);
       createPage({
         // Path for this page — required
@@ -56,6 +55,8 @@ exports.createPages = ({ graphql, actions }) => {
           limit: postsPerPage,
           skip: idx * postsPerPage,
           currentPage,
+          isLastPage,
+          isFirstPage,
         },
       });
     });

@@ -3,6 +3,43 @@
   max-width: 100%;
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 2rem;
+}
+
+.pagination {
+  margin: 2.6rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pagination__link {
+  &__old {
+    border-radius: 0.3rem;
+    padding: 0.8rem 1.6rem;
+    border: none;
+    color: #53bd95;
+    border: 1px solid #53bd95;
+    text-transform: uppercase;
+    &:hover {
+      border-color: none;
+      background-color: #53bd95;
+      color: #fff;
+    }
+  }
+  &__new {
+    border-radius: 0.3rem;
+    padding: 0.8rem 1.6rem;
+    border: none;
+    background-color: #53bd95;
+    color: #fff;
+    border: 1px solid;
+    text-transform: uppercase;
+    &:hover {
+      border-color: #53bd95;
+      background-color: #fff;
+      color: #53bd95;
+    }
+  }
 }
