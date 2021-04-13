@@ -5,18 +5,18 @@ const Footer = () => {
   return (
     <div className={footerStyles.footer__container}>
       <span>
-        Designed and Developed by <a href="#">@devthagichu</a>
+        Designed and Developed by <a href="/">@devthagichu</a>
       </span>
       <div>
         <ul>
           <li>
-            <a href="#">Facebook</a>
+            <a href="/">Facebook</a>
           </li>
           <li>
-            <a href="#">Twitter</a>
+            <a href="/">Twitter</a>
           </li>
           <li>
-            <a href="#">Linkdin</a>
+            <a href="/">Linkdin</a>
           </li>
         </ul>
       </div>

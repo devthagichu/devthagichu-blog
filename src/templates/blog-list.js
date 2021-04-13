@@ -1,8 +1,8 @@
 import * as React from "react";
-import { useStaticQuery, graphql, Link } from "gatsby";
+import { graphql, Link } from "gatsby";
 import blogStyles from "./blog.module.scss";
 import PageLayout from "../components/page/PageLayout";
-import Head from "../components/head/Head";
+// import Head from "../components/head/Head";
 import Pagetitle from "../components/pagetitle/Pagetitle";
 import BlogPostCard from "../components/cards/BlogPostCard";
 
@@ -50,9 +50,10 @@ export const query = graphql`
   }
 `;
 
-const IndexPage = ({ data }) => {
+const IndexPage = ({ data, pageContext }) => {
+  const { currentPage, isLastPage, isFirstPage } = pageContext;
   return (
-    <>
+    <PageLayout>
       {/* <Head title="Blog" /> */}
       <Pagetitle title="Latest Posts" />
       <div className={blogStyles.card__container}>
@@ -60,7 +61,29 @@ const IndexPage = ({ data }) => {
           <BlogPostCard key={edge.node.id} post={edge.node} />
         ))}
       </div>
-    </>
+      <div className={blogStyles.pagination}>
+        {isFirstPage ? (
+          <div />
+        ) : (
+          <Link
+            to={`/blog/page/${currentPage - 1}`}
+            className={blogStyles.pagination__link__new}
+          >
+            Previous Page
+          </Link>
+        )}
+        {isLastPage ? (
+          <div />
+        ) : (
+          <Link
+            to={`/blog/page/${currentPage + 1}`}
+            className={blogStyles.pagination__link__old}
+          >
+            Next Page
+          </Link>
+        )}
+      </div>
+    </PageLayout>
   );
 };
 

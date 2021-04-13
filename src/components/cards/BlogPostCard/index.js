@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useStaticQuery, graphql, Link } from "gatsby";
+import { Link } from "gatsby";
 import Img from "gatsby-image";
 import blogCardStyles from "./blogpostcard.module.scss";
 
