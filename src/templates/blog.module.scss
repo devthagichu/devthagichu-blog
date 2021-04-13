@@ -1,10 +1,28 @@
+@import "../styles/breakPoints.scss";
+
 .card__container {
   position: relative;
   max-width: 100%;
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+
   grid-gap: 2rem;
+
+  @include xs {
+    grid-template-columns: 1fr;
+  }
+  @include sm {
+    grid-template-columns: 1fr 1fr;
+  }
+  @include md {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @include lg {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @include xl {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 .pagination {

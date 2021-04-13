@@ -2,7 +2,7 @@ import * as React from "react";
 import { graphql, Link } from "gatsby";
 import blogStyles from "./blog.module.scss";
 import PageLayout from "../components/page/PageLayout";
-// import Head from "../components/head/Head";
+import Head from "../components/head/Head";
 import Pagetitle from "../components/pagetitle/Pagetitle";
 import BlogPostCard from "../components/cards/BlogPostCard";
 
@@ -54,7 +54,7 @@ const IndexPage = ({ data, pageContext }) => {
   const { currentPage, isLastPage, isFirstPage } = pageContext;
   return (
     <PageLayout>
-      {/* <Head title="Blog" /> */}
+      <Head title="Blog" />
       <Pagetitle title="Latest Posts" />
       <div className={blogStyles.card__container}>
         {data.allContentfulArticle.edges.map((edge) => (
