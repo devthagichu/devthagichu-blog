@@ -16,19 +16,19 @@ const BlogPostCard = ({ post }) => {
           <p className={blogCardStyles.card__date}>{post.createdAt}</p>
           {post.category.map((item) => (
             <div key={item.id}>
-              <span className={blogCardStyles.card__category}>
-                {item.title}
-              </span>
+              <span className={blogCardStyles.card__link}>{item.title}</span>
             </div>
           ))}
         </div>
 
-        <h1 className={blogCardStyles.card__title}>{post.title}</h1>
+        <h1 className={[blogCardStyles.card__title, "display"]}>
+          {post.title}
+        </h1>
         <p className={blogCardStyles.card__body}>
           Donec sollicitudin molestie malesuada. Lorem ipsum dolor sit amet,
           consectetur adipiscing elit.
         </p>
-        <span className={blogCardStyles.card__link}>Read More</span>
+        <span className={blogCardStyles.card__category}>Read More</span>
       </Link>
     </div>
   );

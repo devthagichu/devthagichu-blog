@@ -7,8 +7,8 @@ export default function index() {
     <div style={{ width: "100%" }}>
       <div className={menuStyles.container}>
         <header className={menuStyles.header}>
-          <Link to="/" className={menuStyles.menu__logo}>
-            DevThagichu
+          <Link to="/" className="display display__1">
+            T.
           </Link>
           <input
             className={menuStyles.menu__btn}
@@ -20,19 +20,29 @@ export default function index() {
           </label>
           <ul className={menuStyles.menu}>
             <li>
-              <Link to="/about">About Me</Link>
+              <Link className="display display__3" to="/about">
+                About Me
+              </Link>
             </li>
             <li>
-              <Link to="/blog/page/1">Courses</Link>
+              <Link className="display display__3" to="/blog/page/1">
+                Courses
+              </Link>
             </li>
             <li>
-              <Link to="/blog/page/1">Projects</Link>
+              <Link className="display display__3" to="/blog/page/1">
+                Projects
+              </Link>
             </li>
             <li>
-              <Link to="/blog/page/1">Blog</Link>
+              <Link className="display display__3" to="/blog/page/1">
+                Blog
+              </Link>
             </li>
             <li>
-              <Link to="/contacts">Contact</Link>
+              <Link className="display display__3" to="/contacts">
+                Contact
+              </Link>
             </li>
           </ul>
         </header>

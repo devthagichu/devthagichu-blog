@@ -1,0 +1,74 @@
+@import "./fonts.scss";
+@import "./colors.scss";
+
+p {
+  font-family: $mainFont;
+}
+
+.heading {
+  font-family: $mainFont;
+
+  &__1 {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-size: 44px;
+    line-height: 62px;
+    font-weight: 400;
+  }
+  &__2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 36px;
+    line-height: 50px;
+    font-weight: 400;
+  }
+  &__3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 30px;
+    line-height: 46px;
+    font-weight: 400;
+  }
+  &__4 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 24px;
+    line-height: 38px;
+    font-weight: 400;
+  }
+  &__5 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    line-height: 34px;
+    font-weight: 500;
+  }
+}
+
+.display {
+  font-family: $secFont;
+
+  &__1 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 64px;
+    line-height: 80px;
+    text-transform: none;
+  }
+  &__2 {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 36px;
+    line-height: 50px;
+    font-weight: 400;
+    text-transform: none;
+  }
+  &__3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 32px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+}

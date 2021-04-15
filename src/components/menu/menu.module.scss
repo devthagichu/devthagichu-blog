@@ -1,4 +1,5 @@
 @import "../../styles/breakPoints.scss";
+// @import "../../styles/styleGuide.scss";
 
 a {
   color: #000;
@@ -8,11 +9,12 @@ a {
 
 .header {
   background-color: #fff;
-  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
+  // box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
   position: fixed;
   width: 100%;
   max-width: 1100px;
   z-index: 3;
+  border-bottom: 0.5px solid black;
 }
 
 .header ul {
@@ -28,6 +30,7 @@ a {
   padding: 20px 20px;
   border-right: 1px solid #f4f4f4;
   text-decoration: none;
+  // border: 0.5px solid black;
 }
 
 .header li a:hover,
@@ -35,15 +38,15 @@ a {
   background-color: #f4f4f4;
 }
 
-.header .menu__logo {
-  display: block;
-  color: #53bd95;
-  float: left;
-  font-size: 2em;
-  padding: 10px 20px;
-  font-weight: bold !important;
-  text-decoration: none;
-}
+// .header .menu__logo {
+//   display: block;
+//   color: #53bd95;
+//   float: left;
+//   font-size: 2em;
+//   padding: 10px 20px;
+//   font-weight: bold !important;
+//   text-decoration: none;
+// }
 
 /* menu */
 
@@ -99,7 +102,7 @@ a {
 }
 
 .header .menu__btn:checked ~ .menu {
-  max-height: 240px;
+  min-height: 100vh;
 }
 
 .header .menu__btn:checked ~ .menu__icon .menu__navicon {
